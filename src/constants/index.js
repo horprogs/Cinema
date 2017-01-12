@@ -1,0 +1,4 @@
+export const GET_LIST_FILMS = 'GET_LIST_FILMS';
+export const GET_FILMS_REQUEST = 'GET_FILMS_REQUEST';
+export const GET_FILM_REQUEST = 'GET_FILM_REQUEST';
+export const GET_FILM = 'GET_FILM';

@@ -1,0 +1,62 @@
+Тестовое задание на позицию Front-end developer.
+
+Задача: Реализовать Single Page Application на тематику кино.
+
+Использовать React.js/Redux/Webpack/Gulp, препроцессор SASS/Stylus.
+Весь процесс разработки вести на github.com
+Итоговое демо опубликовать на <username>.github.io, https://pages.github.com
+Необходимо выполнить минимум одно из дополнительных заданий.
+Дизайн на ваше усмотрение.
+
+3 страницы с клиентским роутингом.
+
+Данные для приложения доступны через API omdapi:
+
+1) http://www.omdbapi.com/?s=Batman - поиск совпадений по строке
+2) http://www.omdbapi.com/?i=tt0372784 - информация о фильме по IMDb ID
+
+Главная страница:
+
+Route: /
+
+<PageMain>
+    <Title>Поиск фильмов</Title>
+    <Form>
+        <Input />
+        <Submit />
+    </Form>
+</PageMain>
+
+Страница выдачи по поиску:
+
+В сниппете выводим картинку постер, название, год, тип(фильм/сериал).
+Выводим только первую страницу выдачи, пагинация по желанию.
+
+Route: /search?s=<searchString>
+
+<PageSearch>
+    <Title>Результат поиска</Title>
+    <FilmsList>
+        <FilmSnippet />
+    </FilmList />
+</PageSearch>
+
+Карточка фильма:
+
+Route: /film/<imdbId>
+
+На карточке фильма выводим в табличном представлении все доступные поля из ответа API с постером.
+
+<PageFilm>
+    <Title>Название фильма</Title>
+    <FilmCard />
+</PageFilm>
+
+Дополнительные плюсы:
+
+1) написать изоморфное приложение с Server Side Render на node.js
+2) использовать PostCSS в качестве замены препроцессорам, подключить stylelint для валидации css
+3) использовать https://github.com/css-modules/postcss-modules
+4) использовать browsersync, react-hot-loader, подключить eslint с правилами валидации для react.js
+5) написать свою реализацию роутера
+6) написать функциональные тесты для приложения на http://webdriver.io, http://nightwatchjs.org

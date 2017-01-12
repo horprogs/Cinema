@@ -1,0 +1,74 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "fetch": true
+  },
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
+    "linebreak-style": [
+      "off"
+    ],
+    "max-len": [
+      "warn",
+      140
+    ],
+    "no-confusing-arrow": [
+      "off"
+    ],
+    "no-case-declarations": [
+      "off"
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "off"
+    ],
+    "no-nested-ternary": [
+      "off"
+    ],
+    "react/jsx-closing-bracket-location": [
+      "warn",
+      "after-props"
+    ],
+    "react/prop-types": [
+      "off"
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  }
+}
