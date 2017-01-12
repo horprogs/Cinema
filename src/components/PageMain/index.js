@@ -1,8 +1,10 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Form from './form';
 import * as actions from '../../actions/index';
+import styles from './styles.css';
 
 class PageMain extends React.Component {
     constructor() {
@@ -14,7 +16,8 @@ class PageMain extends React.Component {
 
     handlerSubmit = (e) => {
         e.preventDefault();
-        this.props.actions.fetchFilms(this.state.title);
+        browserHistory.push(`/search?s=${this.state.title}`);
+        //this.props.actions.fetchFilms(this.state.title);
     }
 
     handlerChangeTitle = (e) => {
@@ -24,9 +27,10 @@ class PageMain extends React.Component {
     }
 
     render() {
+        console.log(styles)
         return (
             <div>
-                <h1>Поиск фильмов</h1>
+                <h1 className={styles.title}>Поиск фильмов</h1>
                 <Form onSubmit={this.handlerSubmit} onChangeTitle={this.handlerChangeTitle}/>
             </div>
         )

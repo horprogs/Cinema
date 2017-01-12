@@ -5,9 +5,20 @@ import FilmList from './FilmsList';
 import * as actions from '../../actions/index';
 
 class PageSearch extends React.Component {
-    getList() {
+    componentWillMount() {
         let title = this.props.location.query.s;
         this.props.actions.fetchFilms(title);
+    }
+
+    getList() {
+        if (this.props.films.isFetching) {
+            return <div>Loading...</div>;
+        }
+
+        if (!this.props.films.data) {
+            return <div>Films not found</div>;
+        }
+
         return this.props.films.data.map(item => {
             return (
                 <FilmList

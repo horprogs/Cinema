@@ -1,6 +1,5 @@
 import { GET_LIST_FILMS, GET_FILMS_REQUEST, GET_FILM_REQUEST, GET_FILM} from '../constants/index';
 import {getJson} from '../utils/ajax';
-import {browserHistory} from 'react-router';
 
 export function getListFilms(films) {
     return {
@@ -34,7 +33,6 @@ export function fetchFilm(id) {
         return getJson(`http://www.omdbapi.com/?i=`, id)
             .then(response => {
                 dispatch(getFilm(response));
-                browserHistory.push(`/film/${id}`);
             });
     };
 }
@@ -46,7 +44,6 @@ export function fetchFilms(filmTitle) {
         return getJson(`http://www.omdbapi.com/?s=`, filmTitle)
             .then(response => {
                 dispatch(getListFilms(response));
-                browserHistory.push(`/search?s=${filmTitle}`);
             });
     };
 }
