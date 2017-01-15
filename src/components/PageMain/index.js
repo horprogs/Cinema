@@ -10,7 +10,7 @@ class PageMain extends React.Component {
     constructor() {
         super();
         this.state = {
-            title: 'Batman'
+            title: ''
         }
     }
 
@@ -20,14 +20,13 @@ class PageMain extends React.Component {
         //this.props.actions.fetchFilms(this.state.title);
     }
 
-    handlerChangeTitle = (e) => {
+    handlerChangeTitle = (e) => {                                           
         this.setState({
             title: e.target.value
-        })
+        })                                                     
     }
 
     render() {
-        console.log(styles)
         return (
             <div>
                 <h1 className={styles.title}>Поиск фильмов</h1>

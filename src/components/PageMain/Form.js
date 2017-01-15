@@ -1,11 +1,9 @@
 import React from 'react';
+import styles from './styles.css';
 
 export default class Form extends React.Component {
     constructor() {
         super();
-        this.state = {
-            value: 'Batman'
-        }
     }
 
     render() {
@@ -14,11 +12,11 @@ export default class Form extends React.Component {
                 <input
                     type="text"
                     name="title"
-                    value={this.state.value}
-                    placeholder="Название"
+                    placeholder="Название"                                              
                     onChange={this.props.onChangeTitle}
+                    required
                 />
-                <button>Найти</button>
+                <button className={styles.btn}>Найти</button>
             </form>
         )
     }

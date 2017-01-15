@@ -1,0 +1,39 @@
+.table {
+  display: table;
+  max-width: 600px;
+  margin: auto;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 15px;
+  border: 1px solid #334164;
+}
+
+.poster {
+  vertical-align: middle;
+  margin-left: 20px;
+  width: 100px;
+  height: auto;
+}
+
+.back {
+  display: inline-block;                                          
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #334164;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.title {
+  color: #334164;
+  font-weight: 400;
+  text-align: center;
+}

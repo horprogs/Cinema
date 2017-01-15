@@ -1,13 +1,15 @@
 import React from 'react';
+import {browserHistory, Link} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import FilmList from './FilmsList';
 import * as actions from '../../actions/index';
+import styles from './styles.css';
 
 class PageSearch extends React.Component {
     componentWillMount() {
         let title = this.props.location.query.s;
-        this.props.actions.fetchFilms(title);
+        this.props.actions.fetchFilms(title);                                  
     }
 
     getList() {
@@ -19,23 +21,13 @@ class PageSearch extends React.Component {
             return <div>Films not found</div>;
         }
 
-        return this.props.films.data.map(item => {
-            return (
-                <FilmList
-                    key={item.imdbID}
-                    id={item.imdbID}
-                    title={item.Title}
-                    year={item.Year}
-                    image={item.Poster}
-                    type={item.Type}
-                />
-            )
-        });
+        return <FilmList films={this.props.films}/>
     }
 
     render() {
         return (
             <div>
+                <Link onClick={browserHistory.goBack} className={styles.back}>Back</Link>
                 {this.getList()}
             </div>
         )

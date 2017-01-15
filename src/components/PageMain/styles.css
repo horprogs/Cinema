@@ -1,3 +1,8 @@
 .title {
-    color: red;
+  color: #334164;
+  font-weight: 400;
 }
+
+.btn {
+  margin-top: 20px;                
+}                                                              

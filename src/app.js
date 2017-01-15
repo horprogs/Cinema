@@ -7,14 +7,16 @@ import { Provider } from 'react-redux';
 import PageMain from './components/PageMain';
 import PageSearch from './components/PageSearch';
 import PageFilm from './components/PageFilm';
+import App from './components/App';
+import styles from './components/App/main.css';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store} className={styles.main}>
         <Router history={history}>
-            <Route path="/">
+            <Route path="/" component={App}>
                 <IndexRoute component={PageMain}/>
                 <Route path="search" component={PageSearch}/>
                 <Route path="film/:id" component={PageFilm}/>

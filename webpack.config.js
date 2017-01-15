@@ -27,12 +27,6 @@ module.exports = {
             }
         ]
     },
-    postcss: () => {
-        return [
-            require('precss'),
-            require('autoprefixer')
-        ];
-    },
     devServer: {
         historyApiFallback: true
     }

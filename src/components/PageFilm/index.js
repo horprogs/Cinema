@@ -1,8 +1,10 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as actions from '../../actions';
-import FilmCard from './FilmCard';
+import React from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
+import FilmCard from "./FilmCard";
+import {Link, browserHistory} from "react-router";
+import styles from "./styles.css";
 
 class PageFilm extends React.Component {
     componentWillMount() {
@@ -19,13 +21,17 @@ class PageFilm extends React.Component {
         }
         let filmInfo = this.props.films.data;
         return (
-            <FilmCard filmInfo={filmInfo}/>
+            <div>
+                <FilmCard filmInfo={filmInfo}/>
+            </div>
         )
     }
 
     render() {
         return (
             <div>
+                <Link onClick={browserHistory.goBack} className={styles.back}>Back</Link>
+                <h1 className={styles.title}>{this.props.films.data.Title}</h1>
                 {this.getFields()}
             </div>
         )
